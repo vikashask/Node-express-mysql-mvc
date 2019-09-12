@@ -46,7 +46,23 @@ module.exports.updateProfile = async (req, res) => {
   }
 }
 
-
+module.exports.logout = async (req,res) =>{
+  try {
+    var userDetails = await knex('user').where({email_id:req.body.email_id,isActive:1})
+    if(userDetails.length>0){
+      console.log("data",JSON.parse(JSON.stringify(userDetails)));
+      return res.json({
+        response: message.success.FORGOT_PASSWORD_SENT
+      });
+    }else{
+      return res.json({
+        response: message.error.USER_NOT_EXIST
+      });
+    }
+  } catch (e) {
+    console.log(e)
+  }
+}
 
 var checkUserExist = async (email_id) =>{
   try {
