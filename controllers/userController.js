@@ -16,7 +16,7 @@ module.exports.getUsers = async (req, res) => {
 
 module.exports.login = async (req, res) => {
   try {
-    var data = await knex('user').where({email:req.body.email,password:req.body.password,isActive:1}).select('id','email')
+    var data = await knex('user').where({email_id:req.body.email_id,password:md5(req.body.password),isActive:1}).select('id','email_id')
     console.log("data",data.length);
     if(data.length>0){
       return res.json({
@@ -36,13 +36,13 @@ module.exports.login = async (req, res) => {
 
 module.exports.register = async (req, res) => {
   try {
-    let isUserExist = await checkUserExist(req.body.email);
+    let isUserExist = await checkUserExist(req.body.email_id);
     if(isUserExist){
       return res.json({
         message:message.error.USER_ALLREADY_EXIST
       });
     }else{
-      var data = await knex('user').insert({email:req.body.email,password:md5(req.body.password),isActive:1});
+      var data = await knex('user').insert({email_id:req.body.email_id,password:md5(req.body.password),isActive:1});
       if(data.length>0){
         return res.json({
           message:message.success.REGISTER
@@ -58,9 +58,27 @@ module.exports.register = async (req, res) => {
   }
 }
 
-var checkUserExist = async (email) =>{
+module.exports.forgotPassword = async (req,res) =>{
   try {
-    var data = await knex('user').where({email:email,isActive:1})
+    var userDetails = await knex('user').where({email_id:req.body.email_id,isActive:1})
+    if(userDetails.length>0){
+      console.log("data",JSON.parse(JSON.stringify(userDetails)));
+      return res.json({
+        response: message.success.FORGOT_PASSWORD_SENT
+      });
+    }else{
+      return res.json({
+        response: message.error.USER_NOT_EXIST
+      });
+    }
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+var checkUserExist = async (email_id) =>{
+  try {
+    var data = await knex('user').where({email_id:email_id,isActive:1})
     console.log("data",data.length);
     if(data.length>0){
       return true;
