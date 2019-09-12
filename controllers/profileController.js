@@ -34,7 +34,8 @@ module.exports.updateProfile = async (req, res) => {
         console.log("data---", data);
         if (data > 0) {
           return res.json({
-            message: message.success.PROFILE_UPDATED
+            message: message.success.PROFILE_UPDATED,
+            response:req.body
           });
         } else {
           return res.json({
@@ -58,18 +59,14 @@ module.exports.updateProfile = async (req, res) => {
 
 module.exports.logout = async (req, res) => {
   try {
-    var userDetails = await knex('user').where({
-      email_id: req.body.email_id,
-      isActive: 1
-    })
-    if (userDetails.length > 0) {
-      console.log("data", JSON.parse(JSON.stringify(userDetails)));
+    let userData = await checkUserExist(req.body.email_id);
+    if (userData) {
       return res.json({
-        response: message.success.FORGOT_PASSWORD_SENT
+        message: message.success.LOGOUT
       });
-    } else {
+    }else{
       return res.json({
-        response: message.error.USER_NOT_EXIST
+        message: message.error.SOMETHING_WRONG
       });
     }
   } catch (e) {
