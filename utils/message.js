@@ -5,6 +5,7 @@ module.exports = {
         PROFILE_UPDATED:'Profile updated successful',
         FORGOT_PASSWORD_SENT:'Forgot password sent successful',
         LOGOUT:'Logout successful',
+        TAG_INSERT_SUCCESS:'Tag insert successfull',
     },
     error:{
         INVALID_LOGIN:'Invalid login credentials',
