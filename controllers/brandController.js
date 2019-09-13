@@ -9,7 +9,7 @@ module.exports.getBrand = async (req,res) => {
           })
         if(brandData.length>0){
             return res.json({
-              response: JSON.parse(JSON.stringify(brandData))[0]
+              response: JSON.parse(JSON.stringify(brandData))
             })        
         }else{
             return res.json({

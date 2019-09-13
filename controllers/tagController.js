@@ -9,7 +9,7 @@ module.exports.getTag = async (req, res) => {
     })
     if (tagData.length > 0) {
       return res.json({
-        response: JSON.parse(JSON.stringify(brandData))[0]
+        response: JSON.parse(JSON.stringify(tagData))
       })
     } else {
       return res.json({
