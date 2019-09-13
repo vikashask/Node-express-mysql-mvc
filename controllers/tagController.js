@@ -21,27 +21,55 @@ module.exports.getTag = async (req, res) => {
   }
 }
 
-module.exports.addTag = async (req,res) =>{
+module.exports.addTag = async (req, res) => {
   try {
     let tagInsertData = await knex('tags').insert({
-      name:req.body.name,
-      slug:req.body.slug,
-      description:req.body.description
-    });    
-    if (tagInsertData>0) {
+      name: req.body.name,
+      slug: req.body.slug,
+      description: req.body.description
+    });
+    if (tagInsertData > 0) {
       return res.json({
-        response:req.body,
-        message:message.success.TAG_INSERT_SUCCESS
+        response: req.body,
+        message: message.success.TAG_INSERT
       })
     } else {
       return res.json({
-        response:message.error.SOMETHING_WRONG
+        response: message.error.SOMETHING_WRONG
       })
     }
   } catch (error) {
     console.log(error);
     return res.json({
-      response:error
+      response: error
+    })
+  }
+}
+
+module.exports.updateTag = async (req, res) => {
+  try {
+    let tagInsertData = await knex('tags').where({
+      id: req.body.id
+    }).update({
+      name: req.body.name,
+      slug: req.body.slug,
+      description: req.body.description,
+      isActive: req.body.isActive,
+    });
+    if (tagInsertData > 0) {
+      return res.json({
+        response: req.body,
+        message: message.success.TAG_UPDATE
+      })
+    } else {
+      return res.json({
+        response: message.error.SOMETHING_WRONG
+      })
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      response: error
     })
   }
 }
