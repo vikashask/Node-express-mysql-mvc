@@ -7,7 +7,7 @@ module.exports.getBrand = async (req,res) => {
         var brandData = await knex('brand').where({
             isActive: 1
           })
-        if(brandData){
+        if(brandData.length>0){
             return res.json({
               response: JSON.parse(JSON.stringify(brandData))[0]
             })        
