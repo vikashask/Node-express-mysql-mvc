@@ -4,8 +4,10 @@ var message = require('../utils/message')
 
 module.exports.getProfile = async (req, res) => {
   try {
+    console.log("sdfsd",req.params.email_id);
+    
     var data = await knex.where({
-      email_id: req.body.email_id,
+      email_id: req.params.email_id,
       isActive: 1
     }).select('email_id', 'profile_pic', 'first_name', 'last_name', 'phone_number').table('user');
     console.log("---", JSON.parse(JSON.stringify(data))[0]);
