@@ -13,6 +13,7 @@ module.exports = {
         PASSWORD_NOT_MATCHED:'Password did not matched',
         USER_NOT_EXIST:'User not exist',
         SOMETHING_WRONG:'Something went wrong',
+        BRAND_NOT_FOUND:'Brand not found',
 
     },
 
