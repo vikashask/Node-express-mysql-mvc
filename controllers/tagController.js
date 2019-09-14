@@ -49,19 +49,15 @@ module.exports.addTag = async (req, res) => {
 module.exports.deleteTag = async (req, res) => {
   try {
     let ids = req.params.ids.split(',');
-    console.log("id",req.params);
-    
-    // console.log("id",req);
-    process.exit()
-    let tagInsertData = await knex('tags').where({
-      id: req.body.id
-    }).del();
-    console.log(tagInsertData);
-    
+    console.log("id",ids);
+    var idArray = req.params.ids.split(',').map(function(item) {
+        return parseInt(item, 10);
+    });
+    console.log("----d",idArray);
+    let tagInsertData = await knex('tags').whereIn('id', idArray).delete()
     if (tagInsertData > 0) {
       return res.json({
-        response: req.body,
-        message: message.success.TAG_UPDATE
+        message: message.success.TAG_DELETED
       })
     } else {
       return res.json({
