@@ -7,6 +7,7 @@ module.exports = {
         LOGOUT:'Logout successful',
         TAG_INSERT:'Tag insert successfull',
         TAG_UPDATE:'Tag updated successfull',
+        TAG_DELETED:'Tag Deleted successfull',
     },
     error:{
         INVALID_LOGIN:'Invalid login credentials',
