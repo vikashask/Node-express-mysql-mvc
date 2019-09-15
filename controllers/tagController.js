@@ -72,6 +72,35 @@ module.exports.deleteTag = async (req, res) => {
   }
 }
 
+module.exports.updateTagStatus = async (req, res) => {
+  try {
+    let ids = req.params.ids.split(',');
+    var idArray = req.params.ids.split(',').map(function(item) {
+        return parseInt(item, 10);
+    });
+    console.log("----d",idArray);
+    let tagInsertData = await knex('tags').whereIn('id', idArray).update(
+      {
+        isActive:req.body.isActive
+      }
+    )
+    if (tagInsertData > 0) {
+      return res.json({
+        message: message.success.TAG_UPDATE
+      })
+    } else {
+      return res.json({
+        response: message.error.SOMETHING_WRONG
+      })
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      response: error
+    })
+  }
+}
+
 module.exports.updateTag = async (req, res) => {
   try {
     let tagInsertData = await knex('tags').where({
