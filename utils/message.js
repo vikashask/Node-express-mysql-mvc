@@ -5,8 +5,11 @@ module.exports = {
         PROFILE_UPDATED:'Profile updated successful',
         FORGOT_PASSWORD_SENT:'Forgot password sent successful',
         LOGOUT:'Logout successful',
-        TAG_INSERT:'Tag insert successfull',
+        TAG_INSERT:'Tag added successfull',
+        MENU_INSERT:'Menu added successfull',
         TAG_UPDATE:'Tag updated successfull',
+        MENU_UPDATE:'Tag updated successfull',
+        MENU_DELETED:'Menu Deleted successfull',
         TAG_DELETED:'Tag Deleted successfull',
     },
     error:{
@@ -18,6 +21,7 @@ module.exports = {
         SOMETHING_WRONG:'Something went wrong',
         BRAND_NOT_FOUND:'Brand not found',
         TAG_NOT_FOUND:'Tag not found',
+        MENU_NOT_FOUND:'Tag not found',
 
     },
 
