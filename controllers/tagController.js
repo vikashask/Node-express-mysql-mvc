@@ -4,12 +4,15 @@ var message = require('../utils/message')
 
 module.exports.getTag = async (req, res) => {
   try {
-    var tagData = await knex('tags').where({
-      isActive: 1
-    })
+    // sql = select *, (select COUNT(*) from tags_used tu where tu.tags_id=t.id) count from tags t
+    // var tagData = await knex('tags').where({
+    //   isActive: 1
+    // })
+    var tagData = await knex.raw("select *, (select COUNT(*) from tags_used tu where tu.tags_id=t.id) count from tags t");
+    console.log("----",tagData);
     if (tagData.length > 0) {
       return res.json({
-        response: JSON.parse(JSON.stringify(tagData))
+        response: JSON.parse(JSON.stringify(tagData[0]))
       })
     } else {
       return res.json({
