@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+.sidebar {
+    height: calc(100vh - 60px);
+    width: 250px;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+}
+
+.main-panel {
+    width: 100%;
+    padding-left: 250px
+}
+
+@media only screen and (max-width: 767px) {
+    .sidebar {
+      width: 68px;
+    }
+    .main-panel {
+      padding-left: 68px;
+    }
+  }

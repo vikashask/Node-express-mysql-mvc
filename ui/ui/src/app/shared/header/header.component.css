@@ -1,0 +1,49 @@
+.header {
+    height: 60px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+}
+
+.header-sub-div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.studio-img {
+  height: 25px;
+}
+
+.arrow-down {
+    margin-top: 4px;
+    margin-left: 4px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    color: black;
+    width: 300px;
+    overflow: hidden;
+    /* z-index: 2; */
+    background-color: white;
+  }
+
+  .menu-label {
+    font-size: 22px;
+    font-weight: bolder;
+  }
+
+  .user-name {
+    color: #8e8787;
+  }
+
+ 

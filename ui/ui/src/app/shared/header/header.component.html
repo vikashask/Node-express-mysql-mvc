@@ -1,0 +1,22 @@
+<div class="row justify-content-between align-items-center header m-0 p-0">
+  <div class="header-sub-div m-1">
+    <img class="studio-img" [src]="imageDomain + '/pk-studio.png'">
+    <span class="m-2">PK Studio</span>
+  </div>
+  <div class="header-sub-div m-1" (click)="openMenu = !openMenu">
+    <app-round-image [src]="selectedCompany.imgSrc"></app-round-image>
+    <span class="m-1 menu-label">{{selectedCompany.title}}</span>
+    <span class="arrow-down"></span>
+    <div @myInsertRemoveTrigger *ngIf="openMenu" class="row menu border shadow-lg">
+      <div *ngFor="let company of companies" class="col-12 border-bottom p-0" (click)="selectComany(company)">
+          <app-company-desc [title]="company.title" [subTitle]="company.subTitle"
+          [imgSrc]="company.imgSrc" [checked]="company.checked"></app-company-desc>
+      </div>
+    </div>
+  </div>
+  <div class="header-sub-div m-1 user-name">
+     <span>Welcome, {{userDetail.firstName}}</span>
+     <app-round-image class="m-2" [src]="userDetail.imgSrc"></app-round-image>
+     <span class="fa fa-chevron-down"></span>
+  </div>
+</div>

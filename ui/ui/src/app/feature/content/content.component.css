@@ -1,0 +1,157 @@
+.upload-btn {
+    background-color: #d46f00;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.sync-btn {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/* ======================== content tab css ======================== */
+.content-tab .nav-link{
+    padding: 1.4rem 5rem;
+}
+.content-post .form-group{
+    margin-right: 10px;
+}
+.table td, .table th{
+    vertical-align: middle;
+}
+.input-group{
+    width:20%;
+}
+.main-tb-inline{
+    float: left; 
+    text-align:left;
+  height:50px;
+  display: table;
+  width: 100%;
+
+}
+.main-tb-inline .tb-inline{
+    vertical-align:middle;
+    display: inline-grid;
+    margin: 0 5px;;
+}
+select.form-control {background-color: #f1f1f1 ;}
+
+/*  ==================== search box icon ====================  */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+/* ================================= checkbox css  ================================= */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; 
+  top: 0;
+  width: 1.5em; height: 1.5em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2713\0020';
+  position: absolute;
+  top: .15em; left: .22em;
+  font-size: 1.3em;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .2s;
+
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 2px solid blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 2px solid #4778d9!important;
+}
+
+
+.tb-inline label{
+    margin-bottom: 1.2rem;
+}
+.nav.active, .nav-item:hover {
+    font-weight: bold;
+    color: #d46f00;
+    border-bottom:2px solid #d46f00;
+}
+.table th{border-top:0px;}
+hr{margin:0px;}
+table th:nth-child(3),
+table td:nth-child(3)
+{
+    background: #f1f1f1;
+}
