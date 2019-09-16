@@ -9,7 +9,7 @@ module.exports.getTag = async (req, res) => {
     //   isActive: 1
     // })
     var tagData = await knex.raw("select *, (select COUNT(*) from tags_used tu where tu.tags_id=t.id) count from tags t");
-    console.log("----",tagData);
+    // console.log("----",tagData);
     if (tagData.length > 0) {
       return res.json({
         response: JSON.parse(JSON.stringify(tagData[0]))
