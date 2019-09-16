@@ -45,3 +45,29 @@ module.exports.addMenu = async (req, res) => {
     })
   }
 }
+
+module.exports.deleteMenu = async (req, res) => {
+  try {
+    let ids = req.params.ids.split(',');
+    console.log("id",ids);
+    var idArray = req.params.ids.split(',').map(function(item) {
+        return parseInt(item, 10);
+    });
+    console.log("----d",idArray);
+    let tagInsertData = await knex('menu').whereIn('id', idArray).delete()
+    if (tagInsertData > 0) {
+      return res.json({
+        message: message.success.MENU_DELETED
+      })
+    } else {
+      return res.json({
+        response: message.error.SOMETHING_WRONG
+      })
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      response: error
+    })
+  }
+}
