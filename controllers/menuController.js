@@ -71,3 +71,31 @@ module.exports.deleteMenu = async (req, res) => {
     })
   }
 }
+
+module.exports.updateMenu = async (req, res) => {
+  try {
+    let menuInsertData = await knex('menu').where({
+      id: req.body.id
+    }).update({
+      name: req.body.name,
+      type: req.body.type,
+      isVisibility: req.body.isVisibility,
+      icon_img: req.body.icon_img
+    });
+    if (menuInsertData > 0) {
+      return res.json({
+        response: req.body,
+        message: message.success.MENU_UPDATE
+      })
+    } else {
+      return res.json({
+        response: message.error.SOMETHING_WRONG
+      })
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      response: error
+    })
+  }
+}
