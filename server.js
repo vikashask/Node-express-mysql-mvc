@@ -9,6 +9,7 @@ const app  = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(express.static('public'));
 
 app.use(multer().any());
 app.use(cors()); //enable cores

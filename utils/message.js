@@ -12,8 +12,11 @@ module.exports = {
         INGREDIENTS_DELETED:'Ingredients deleted successfull',
         INGREDIENTS_UPDATED:'Ingredients updated successfull',
         MENU_INSERT:'Menu added successfull',
-        MENU_UPDATE:'Tag updated successfull',
+        MENU_UPDATE:'Menu updated successfull',
         MENU_DELETED:'Menu deleted successfull',
+        CATEGORY_INSERT:'Category added successfull',
+        CATEGORY_UPDATED:'Category updated successfull',
+        CATEGORY_DELETED:'Category deleted successfull',
     },
     error:{
         INVALID_LOGIN:'Invalid login credentials',
@@ -26,6 +29,7 @@ module.exports = {
         TAG_NOT_FOUND:'Tag not found',
         INGREDIENTS_NOT_FOUND:'Ingredients not found',
         MENU_NOT_FOUND:'Tag not found',
+        CATEGORY_NOT_FOUND:'Category not found',
 
     },
 
