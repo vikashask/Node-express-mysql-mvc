@@ -4,8 +4,13 @@ var message = require('../utils/message')
 
 module.exports.getMenu = async (req, res) => {
   try {
-    var menuData = await knex('menu');
-    console.log("----",menuData);
+    let menuData;
+    if (req.params.id) {
+      menuData = await knex('menu').where({id:req.params.id});
+    }else{
+      menuData = await knex('menu');
+    }
+    console.log("----", menuData);
     if (menuData.length > 0) {
       return res.json({
         response: JSON.parse(JSON.stringify(menuData))
@@ -16,7 +21,10 @@ module.exports.getMenu = async (req, res) => {
       })
     }
   } catch (error) {
-    console.log(error)
+    console.log(error);
+    return res.json({
+      response: error
+    });
   }
 }
 
@@ -42,18 +50,17 @@ module.exports.addMenu = async (req, res) => {
     console.log(error);
     return res.json({
       response: error
-    })
+    });
   }
 }
 
 module.exports.deleteMenu = async (req, res) => {
   try {
     let ids = req.params.ids.split(',');
-    console.log("id",ids);
-    var idArray = req.params.ids.split(',').map(function(item) {
-        return parseInt(item, 10);
+    var idArray = req.params.ids.split(',').map(function (item) {
+      return parseInt(item, 10);
     });
-    console.log("----d",idArray);
+    console.log("----d", idArray);
     let tagInsertData = await knex('menu').whereIn('id', idArray).delete()
     if (tagInsertData > 0) {
       return res.json({
