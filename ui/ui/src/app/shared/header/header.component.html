@@ -9,14 +9,13 @@
     <span class="arrow-down"></span>
     <div @myInsertRemoveTrigger *ngIf="openMenu" class="row menu border shadow-lg">
       <div *ngFor="let company of companies" class="col-12 border-bottom p-0" (click)="selectComany(company)">
-          <app-company-desc [title]="company.title" [subTitle]="company.subTitle"
-          [imgSrc]="company.imgSrc" [checked]="company.checked"></app-company-desc>
+        <app-company-desc [title]="company.title" [subTitle]="company.subTitle" [imgSrc]="company.imgSrc" [checked]="company.checked"></app-company-desc>
       </div>
     </div>
   </div>
   <div class="header-sub-div m-1 user-name">
-     <span>Welcome, {{userDetail.firstName}}</span>
-     <app-round-image class="m-2" [src]="userDetail.imgSrc"></app-round-image>
-     <span class="fa fa-chevron-down"></span>
+    <span>Welcome, {{userDetail.firstName}}</span>
+    <app-round-image class="m-2" [src]="userDetail.imgSrc"></app-round-image>
+    <span class="fa fa-chevron-down"></span>
   </div>
 </div>

@@ -5,6 +5,7 @@
     position: fixed;
     width: 100vw;
     top: 0px;
+    z-index: 9999;
 }
 
 .header-sub-div {
@@ -38,8 +39,12 @@
   }
 
   .menu-label {
-    font-size: 22px;
-    font-weight: bolder;
+  font-size: 22px;
+  font-weight: bolder;
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   }
 
   .user-name {
