@@ -3,21 +3,24 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap, finalize } from 'rxjs/operators';
 
-
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AsyncHttpService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private spinner: NgxSpinnerService) { }
 
   get(url: string, options?: Object): Observable<any> {
+    this.spinner.show();
     return this.httpClient.get(url, options)
       .pipe(
         catchError(this.handleError(url))
       ).pipe(
-        finalize(() => { console.log('completed') })
+        finalize(() => { 
+          this.spinner.hide();
+        })
       );
   }
 
@@ -26,7 +29,7 @@ export class AsyncHttpService {
       .pipe(
         catchError(this.handleError(url))
       ).pipe(
-        finalize(() => { console.log('completed') })
+        finalize(() => { this.spinner.hide();})
       );
   }
 
@@ -35,7 +38,7 @@ export class AsyncHttpService {
       .pipe(
         catchError(this.handleError(url))
       ).pipe(
-        finalize(() => { console.log('completed') })
+        finalize(() => { this.spinner.hide();})
       );
   }
 
@@ -44,7 +47,7 @@ export class AsyncHttpService {
       .pipe(
         catchError(this.handleError(url))
       ).pipe(
-        finalize(() => { console.log('completed') })
+        finalize(() => { this.spinner.hide();})
       );
   }
 

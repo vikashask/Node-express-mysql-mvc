@@ -21,15 +21,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      email_id: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   login() {
-    this.asyncHttpService.get(environment.apiDomain + '/login.json', { params: this.loginForm.value.email }).subscribe(data => {
-      sessionStorage.setItem('token', data.token);
-      this.router.navigate(['content'])
+    this.asyncHttpService.post(environment.apiDomain + '/user/login', this.loginForm.value).subscribe(data => {
+      if (data.response.id) {
+        sessionStorage.setItem('token', JSON.stringify(data.response));
+        this.router.navigate(['content'])
+      } else {
+        console.log(data);
+      }
     })
   }
 
