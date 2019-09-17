@@ -1,0 +1,17 @@
+.input-div {
+    border: 1px solid lightgray!important;
+    height: 35px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.label-div {
+    font-weight: 600;
+}
+
+button {
+    background-color: #d46f00;
+    color: white;
+    width: 100px;
+    font-weight: 600;
+}

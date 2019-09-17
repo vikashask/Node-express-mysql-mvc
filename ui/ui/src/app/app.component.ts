@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     <div>
     <router-outlet></router-outlet>
     </div>
+    <ngx-spinner></ngx-spinner>
     `
 })
 export class AppComponent {

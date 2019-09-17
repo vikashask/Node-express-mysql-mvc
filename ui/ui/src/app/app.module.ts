@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+/** Third party module */
+import { NgxSpinnerModule } from "ngx-spinner";
+
 /** Importing Components */
 import { AppComponent } from './app.component';
 import { MainComponent } from './main.component';
@@ -27,6 +30,7 @@ import { TokenInterceptor } from './provider/http-interceptor.service';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
     AppRoutingModule,
     FeatureModule,
     SharedModule

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiDomain: './assets/data',
+  apiDomain: 'http://localhost:8080',
   imageDomain: './assets/images'
 };
 

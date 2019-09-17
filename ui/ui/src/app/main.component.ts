@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <app-header></app-header>
     <div style="margin-top:60px;">
+    <div class="main-panel">
     <div class="shadow-lg sidebar">
     <app-side-bar></app-side-bar>
     </div>
-    <div class="main-panel">
     <router-outlet></router-outlet>
     </div>
     </div>
