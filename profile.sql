@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2019 at 02:09 PM
+-- Generation Time: Sep 17, 2019 at 02:20 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -100,6 +100,13 @@ CREATE TABLE `employee_role` (
   `isActive` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `employee_role`
+--
+
+INSERT INTO `employee_role` (`id`, `roleName`, `roleDesc`, `isActive`) VALUES
+(1, 'admin', 'admin', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -167,6 +174,38 @@ INSERT INTO `menu` (`id`, `name`, `type`, `icon_img`, `isVisibility`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `meta_tag`
+--
+
+CREATE TABLE `meta_tag` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post`
+--
+
+CREATE TABLE `post` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `tags_ids` varchar(255) NOT NULL,
+  `description` text,
+  `video_ids` varchar(255) NOT NULL,
+  `document_visibility` varchar(155) NOT NULL,
+  `document_publish` varchar(255) NOT NULL,
+  `is_stick_top` tinyint(1) NOT NULL DEFAULT '0',
+  `parmalink` varchar(555) NOT NULL,
+  `category_ids` varchar(255) NOT NULL,
+  `meta_tag_ids` varchar(255) NOT NULL,
+  `post_section_ids` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tags`
 --
 
@@ -223,16 +262,16 @@ CREATE TABLE `user` (
   `profile_pic` varchar(255) DEFAULT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) DEFAULT NULL,
-  `phone_number` varchar(12) DEFAULT NULL
+  `phone_number` varchar(12) DEFAULT NULL,
+  `employee_role_id` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email_id`, `password`, `isActive`, `profile_pic`, `first_name`, `last_name`, `phone_number`) VALUES
-(2, 'vikashraj144@gmail.com', 'de872154ffbf91a5dcc0e539dd2d5106', 1, 'vikas.jpg', 'vikas234', 'verma', '3456789'),
-(6, '', 'de872154ffbf91a5dcc0e539dd2d5106', 1, NULL, '', NULL, NULL);
+INSERT INTO `user` (`id`, `email_id`, `password`, `isActive`, `profile_pic`, `first_name`, `last_name`, `phone_number`, `employee_role_id`) VALUES
+(7, 'vikashraj144@gmail.com', '25d55ad283aa400af464c76d713c07ad', 1, NULL, '', NULL, NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -281,6 +320,18 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `meta_tag`
+--
+ALTER TABLE `meta_tag`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tags`
 --
 ALTER TABLE `tags`
@@ -324,13 +375,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `employee_role`
 --
 ALTER TABLE `employee_role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ingredients`
 --
 ALTER TABLE `ingredients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ingredients_used`
@@ -343,6 +394,18 @@ ALTER TABLE `ingredients_used`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `meta_tag`
+--
+ALTER TABLE `meta_tag`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tags`
@@ -360,7 +423,7 @@ ALTER TABLE `tags_used`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
