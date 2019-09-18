@@ -8,7 +8,8 @@ module.exports.getTag = async (req, res) => {
     // var tagData = await knex('tags').where({
     //   isActive: 1
     // })
-    var tagData = await knex.raw("select *, (select COUNT(*) from tags_used tu where tu.tags_id=t.id) count from tags t");
+    let sql = "select t.*, (select COUNT(*) from tags_used tu where tu.tags_id=t.id) count from tags t LEFT JOIN tags_brand as tb ON(t.id = tb.tags_id)";
+    var tagData = await knex.raw(sql);
     // console.log("----",tagData);
     if (tagData.length > 0) {
       return res.json({
@@ -57,7 +58,7 @@ module.exports.deleteTag = async (req, res) => {
         return parseInt(item, 10);
     });
     console.log("----d",idArray);
-    let tagInsertData = await knex('tags').whereIn('id', idArray).delete()
+    let tagInsertData = await knex('tags').whereIn('id', idArray).delete();    
     if (tagInsertData > 0) {
       return res.json({
         message: message.success.TAG_DELETED
