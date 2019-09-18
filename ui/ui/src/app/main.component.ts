@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
     </div>
     </div>
     `
-    // <app-footer></app-footer>
+  // <app-footer></app-footer>
 })
 export class MainComponent implements OnInit {
 
