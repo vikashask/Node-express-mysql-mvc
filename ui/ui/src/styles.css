@@ -11,7 +11,6 @@
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'Helvetica-Bold';
   src: url('assets/fonts/Helvetica-Bold.eot');
@@ -23,25 +22,21 @@
   font-weight: bold;
   font-style: normal;
 }
-
 body, html{
   font-family:  Helvetica, Arial
 }
-
 .sidebar {
-    height: calc(100vh - 60px);
+    /* height: calc(100vh - 60px); */
     width: 250px;
-    position: fixed;
-    top: 60px;
-    left: 0px;
+    /* position: fixed; */
+    /* top: 60px; */
+    /* left: 0px; */
 }
-
 .main-panel {
-    width: 100%;
-    padding-left: 250px
+    /* width: calc(100vh - 250px);; */
+    /* padding-left: 250px */
+    display: flex;
 }
-
-
 /* ================================= checkbox css  ================================= */
 .check-box {
   display: block;
@@ -55,7 +50,6 @@ body, html{
   -ms-user-select: none;
   user-select: none;
 }
-
 /* Hide the browser's default checkbox */
 .check-box input {
   position: absolute;
@@ -64,7 +58,6 @@ body, html{
   height: 0;
   width: 0;
 }
-
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
@@ -72,32 +65,26 @@ body, html{
   left: 5px;
   height: 25px;
   width: 25px;
-  border:1px solid #eee;
- 
+  border:2px solid #b2b1b1;
 }
-
 /* On mouse-over, add a grey background color */
 .check-box:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #fff;
 }
-
 /* When the checkbox is checked, add a blue background */
 .check-box input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: #ccc;
 }
-
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
 /* Show the checkmark when checked */
 .check-box input:checked ~ .checkmark:after {
   display: block;
 }
-
 /* Style the checkmark/indicator */
 .check-box .checkmark:after {
   left: 9px;
@@ -111,13 +98,42 @@ body, html{
   transform: rotate(45deg);
 }
 h2.title{font-size:2.5rem; font-family:Helvetica-Bold}
+h3{
+  font-size: 1.5rem;
+}
+h2, h3{  color:#000; font-weight: 700;}
+textarea{resize:none;}
 
-
+/*  ==================== search box icon ====================  */
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
 @media only screen and (max-width: 767px) {
     .sidebar {
       width: 68px;
     }
-    .main-panel {
-      padding-left: 68px;
-    }
-  }
+}
+
+.disable-input-style {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    /* border-bottom: 1px solid #000000; */
+}
+
+.disable-input-style:focus {
+    outline: none;
+}      

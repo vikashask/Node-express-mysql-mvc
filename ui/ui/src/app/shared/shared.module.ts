@@ -11,6 +11,6 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     CommonModule
   ],
   declarations: [HeaderComponent, FooterComponent, RoundImageComponent, CompanyDescComponent, SideBarComponent],
-  exports: [HeaderComponent, FooterComponent, SideBarComponent]
+  exports: [HeaderComponent, FooterComponent, SideBarComponent, RoundImageComponent]
 })
 export class SharedModule { }
