@@ -122,6 +122,9 @@ textarea{resize:none;}
   pointer-events: none;
   color: #aaa;
 }
+
+.btn{font-weight: 700;}
+
 @media only screen and (max-width: 767px) {
     .sidebar {
       width: 68px;
@@ -146,3 +149,19 @@ textarea{resize:none;}
 .disable-input-style:focus {
     outline: none;
 }      
+
+::-webkit-input-placeholder {
+   font-size: 16px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+      font-size: 16px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+      font-size: 16px;
+}
+
+:-ms-input-placeholder {
+      font-size: 16px;
+}
