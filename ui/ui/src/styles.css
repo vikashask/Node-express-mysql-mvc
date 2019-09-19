@@ -26,16 +26,19 @@ body, html{
   font-family:  Helvetica, Arial
 }
 .sidebar {
-    /* height: calc(100vh - 60px); */
-    width: 250px;
+     height: calc(100vh - 60px);
+   width:13%;
+position: fixed;
     /* position: fixed; */
     /* top: 60px; */
     /* left: 0px; */
 }
+.ng-star-inserted{width: 100%; margin-left: 13%;}
 .main-panel {
     /* width: calc(100vh - 250px);; */
     /* padding-left: 250px */
     display: flex;
+    margin-top: 40px;
 }
 /* ================================= checkbox css  ================================= */
 .check-box {
@@ -125,6 +128,12 @@ textarea{resize:none;}
     }
 }
 
+@media (min-width: 768px){
+.sidebar-img {
+  width: 30px;
+   
+}
+}
 .disable-input-style {
     background: transparent;
     border: none;
