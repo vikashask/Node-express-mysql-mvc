@@ -23,7 +23,7 @@ export class IngredientComponent implements OnInit {
 
   }
   AddIngredient() {
-
+    console.log(this.ingredientForm.value);
   }
 
 

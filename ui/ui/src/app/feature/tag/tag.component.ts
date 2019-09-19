@@ -19,6 +19,7 @@ export class TagComponent implements OnInit {
     })
   }
   addTag() {
+    console.log(this.tagForm.value);
 
   }
 }

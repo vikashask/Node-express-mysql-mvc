@@ -100,13 +100,16 @@ position: fixed;
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-h2.title{font-size:2.5rem; font-family:Helvetica-Bold}
+h2.title{font-size:2rem; font-family:Helvetica-Bold}
 h3{
   font-size: 1.5rem;
 }
 h2, h3{  color:#000; font-weight: 700;}
 textarea{resize:none;}
-
+label{
+    font-size:20px;
+    font-weight: 700;
+}
 /*  ==================== search box icon ====================  */
 .has-search .form-control {
   padding-left: 2.375rem;
