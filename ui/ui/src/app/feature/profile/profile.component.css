@@ -15,3 +15,18 @@ button {
     width: 100px;
     font-weight: 600;
 }
+.img-container{
+    margin: auto;
+    line-height: 100px;
+    width: 100%;
+    border: 3px dashed lightgrey;
+    text-align: center;
+    background:rgb(199, 222, 241);
+    padding: 10px;
+    border-radius: 5px;
+}
+.img-container .innerdiv {
+    line-height: 2.5;
+    display: inline-block;
+    vertical-align: middle;
+  }
