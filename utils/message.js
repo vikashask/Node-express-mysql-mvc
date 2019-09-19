@@ -31,7 +31,7 @@ module.exports = {
         TAG_NOT_FOUND:'Tag not found',
         META_TAG_NOT_FOUND:'Meta Tag not found',
         INGREDIENTS_NOT_FOUND:'Ingredients not found',
-        MENU_NOT_FOUND:'Tag not found',
+        MENU_NOT_FOUND:'Menu not found',
         CATEGORY_NOT_FOUND:'Category not found',
 
     },
