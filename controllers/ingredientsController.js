@@ -4,7 +4,9 @@ var message = require('../utils/message')
 
 module.exports.getIngredients = async (req, res) => {
   try {
-    var data = await knex.raw("select *, (select COUNT(*) from ingredients_used iu where iu.ingredients_id=i.id) count from ingredients i");
+    let sql = `select i.*, (select COUNT(*) from ingredients_used iu where iu.ingredients_id=i.id) count from ingredients i 
+                LEFT JOIN ingredients_brand as ib ON(i.id = ib.ingredients_id) WHERE ib.brand_id=${req.params.brand_id}`
+    var data = await knex.raw(sql);
     if (data.length > 0) {
       return res.json({
         response: JSON.parse(JSON.stringify(data[0]))
@@ -26,7 +28,12 @@ module.exports.addIngredients = async (req, res) => {
       slug: req.body.slug,
       description: req.body.description
     });
-    if (ingredientsInserData > 0) {
+    console.log('ingredientsInserData',ingredientsInserData[0]);
+      let ingreBrandInsertData = await knex('ingredients_brand').insert({
+        ingredients_id: ingredientsInserData[0],
+        brand_id: req.body.brand_id
+      });
+    if (ingreBrandInsertData > 0) {
       return res.json({
         response: req.body,
         message: message.success.INGREDIENTS_INSERT
