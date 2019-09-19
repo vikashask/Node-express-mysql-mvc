@@ -4,12 +4,10 @@ var message = require('../utils/message')
 
 module.exports.getCategory = async (req, res) => {
   try {
-    let categoryData;
-    if (req.params.id) {
-      categoryData = await knex('category').where({id:req.params.id});
-    }else{
-      categoryData = await knex('category');
-    }
+     let categoryData = await knex('category')
+      .leftJoin('category_brand', function() {
+        this.on('category.id', '=', 'category_brand.category_id').andOn('brand_id','=',1)
+      })
     console.log("----", categoryData);
     if (categoryData.length > 0) {
       return res.json({
@@ -30,13 +28,18 @@ module.exports.getCategory = async (req, res) => {
 
 module.exports.addCategory = async (req, res) => {
   try {
-    let tagInsertData = await knex('category').insert({
+    let categoryInsertData = await knex('category').insert({
       name: req.body.name,
       type: req.body.type,
       isVisibility: req.body.isVisibility,
       icon_img: req.body.icon_img
     });
-    if (tagInsertData > 0) {
+    console.log('categoryInsertData',categoryInsertData[0]);
+    let categoryBrandInsertData = await knex('category_brand').insert({
+      category_id: categoryInsertData[0],
+      brand_id: req.body.brand_id
+    });
+    if (categoryBrandInsertData > 0) {
       return res.json({
         response: req.body,
         message: message.success.CATEGORY_INSERT
