@@ -4,13 +4,9 @@ var message = require('../utils/message')
 
 module.exports.getTag = async (req, res) => {
   try {
-    // sql = select *, (select COUNT(*) from tags_used tu where tu.tags_id=t.id) count from tags t
-    // var tagData = await knex('tags').where({
-    //   isActive: 1
-    // })
-    let sql = "select t.*, (select COUNT(*) from tags_used tu where tu.tags_id=t.id) count from tags t LEFT JOIN tags_brand as tb ON(t.id = tb.tags_id)";
+    let sql = `select t.*, (select COUNT(*) from tags_used tu where tu.tags_id=t.id) count from tags t 
+              LEFT JOIN tags_brand as tb ON(t.id = tb.tags_id) WHERE tb.brand_id=${req.params.brand_id}`;
     var tagData = await knex.raw(sql);
-    // console.log("----",tagData);
     if (tagData.length > 0) {
       return res.json({
         response: JSON.parse(JSON.stringify(tagData[0]))
@@ -32,7 +28,12 @@ module.exports.addTag = async (req, res) => {
       slug: req.body.slug,
       description: req.body.description
     });
-    if (tagInsertData > 0) {
+    console.log('tagInsertData',tagInsertData[0]);
+      let tagBrandInsertData = await knex('tags_brand').insert({
+        tags_id: tagInsertData[0],
+        brand_id: req.body.brand_id
+      });
+    if (tagBrandInsertData > 0) {
       return res.json({
         response: req.body,
         message: message.success.TAG_INSERT
