@@ -4,11 +4,14 @@ var message = require('../utils/message')
 
 module.exports.getMetaTag = async (req, res) => {
   try {
-    var metaTagData = await knex('meta_tag');
+    var metaTagData = await knex('meta_tag')
+    .leftJoin('meta_tag_brand', function () {
+      this.on('meta_tag.id', '=', 'meta_tag_brand.meta_tag_id').andOn('brand_id', '=', 1)
+    })
     // console.log("----",metaTagData);
     if (metaTagData.length > 0) {
       return res.json({
-        response: JSON.parse(JSON.stringify(metaTagData[0]))
+        response: JSON.parse(JSON.stringify(metaTagData))
       })
     } else {
       return res.json({
@@ -22,10 +25,15 @@ module.exports.getMetaTag = async (req, res) => {
 
 module.exports.addMetaTag = async (req, res) => {
   try {
-    let tagInsertData = await knex('meta_tag').insert({
+    let metaTagInsertData = await knex('meta_tag').insert({
       name: req.body.name
     });
-    if (tagInsertData > 0) {
+    console.log('metaTagInsertData',metaTagInsertData[0]);
+    let categoryBrandInsertData = await knex('meta_tag_brand').insert({
+      meta_tag_id: metaTagInsertData[0],
+      brand_id: req.body.brand_id
+    });
+    if (categoryBrandInsertData > 0) {
       return res.json({
         response: req.body,
         message: message.success.META_TAG_INSERT
