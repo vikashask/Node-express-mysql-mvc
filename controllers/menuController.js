@@ -4,12 +4,10 @@ var message = require('../utils/message')
 
 module.exports.getMenu = async (req, res) => {
   try {
-    let menuData;
-    if (req.params.id) {
-      menuData = await knex('menu').where({id:req.params.id});
-    }else{
-      menuData = await knex('menu');
-    }
+    let menuData = await knex('menu')
+      .leftJoin('menu_brand', function () {
+        this.on('menu.id', '=', 'menu_brand.menu_id').andOn('brand_id', '=', 1)
+      })
     console.log("----", menuData);
     if (menuData.length > 0) {
       return res.json({
@@ -30,13 +28,18 @@ module.exports.getMenu = async (req, res) => {
 
 module.exports.addMenu = async (req, res) => {
   try {
-    let tagInsertData = await knex('menu').insert({
+    let menuInsertData = await knex('menu').insert({
       name: req.body.name,
       type: req.body.type,
       isVisibility: req.body.isVisibility,
       icon_img: req.body.icon_img
     });
-    if (tagInsertData > 0) {
+    console.log('menuInsertData',menuInsertData[0]);
+    let categoryBrandInsertData = await knex('menu_brand').insert({
+      menu_id: menuInsertData[0],
+      brand_id: req.body.brand_id
+    });
+    if (categoryBrandInsertData > 0) {
       return res.json({
         response: req.body,
         message: message.success.MENU_INSERT
