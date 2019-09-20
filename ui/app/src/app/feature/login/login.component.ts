@@ -27,14 +27,15 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.asyncHttpService.post(environment.apiDomain + '/user/login', this.loginForm.value).subscribe(data => {
-      if (data.response.id) {
-        sessionStorage.setItem('token', JSON.stringify(data.response));
-        this.router.navigate(['content'])
-      } else {
-        console.log(data);
-      }
-    })
+    this.router.navigate(['content']);
+    // this.asyncHttpService.post(environment.apiDomain + '/user/login', this.loginForm.value).subscribe(data => {
+    //   if (data.response.id) {
+    //     sessionStorage.setItem('token', JSON.stringify(data.response));
+    //     this.router.navigate(['content'])
+    //   } else {
+    //     console.log(data);
+    //   }
+    // })
   }
 
 }

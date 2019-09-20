@@ -1,5 +1,102 @@
 <div class="container-fluid p-4">
-  <div class="row m-0 p-0 justify-content-between align-items-center">
-    <h2 class="font-weight-bold">Ingredient</h2>
+  <div class="row m-0 p-0 mt-2 mb-5 justify-content-between align-items-center">
+    <h2 class="title">Ingredient</h2>
+    <div class="form-group has-search"><span class="fa fa-search form-control-feedback"></span>
+      <input class="form-control" placeholder="Search" type="text"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <h3>Add New Ingredient</h3>
+      <!--  =====================================  Form  Ingredient  ===================================== -->
+      <form [formGroup]="ingredientForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type='text' id="name" formControlName='name' class='form-control form-control-lg' placeholder='Lemon Juice'
+            name=''>
+          <span class="text-muted mb-2">The name is how it appears on your site.</span>
+        </div>
+        <div class="form-group">
+          <label for="slug">Slug</label>
+          <input type='text' formControlName='slug' id="slug" class='form-control form-control-lg' placeholder='Lemon Juice'
+            name=''>
+          <span class="text-muted mb-2">The name is how it appears on your site.</span>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" formControlName='description' id="description" placeholder="Heat 1 teaspoon oil in a pan .."
+            rows="5"></textarea>
+        </div>
+        <button type="button" class="upload-btn" [disabled]="ingredientForm?.invalid" (click)='AddIngredient()'>Add New
+          Ingredient</button>
+      </form>
+    </div>
+    <!--  =====================================  Right section  ===================================== -->
+    <div class='col-lg-8 '>
+      <div class="row m-0 p-0 justify-content-between align-items-center">
+        <div class='mb-2'>
+          <div class="btn-group border mr-2">
+            <button type="button" class="btn btn-light ">Bulk Actions</button>
+            <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Tablet</a>
+              <a class="dropdown-item" href="#">Smartphone</a>
+            </div>
+          </div>
+          <button class="upload-btn">Apply</button>
+        </div>
+        <span><b>12 Items</b></span>
+      </div>
+      <!--  =====================================  Table section  ===================================== -->
+      <div class="table-responsive-sm">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th><label class="check-box">
+                  <input class="ml-2" type="checkbox" name="company" [checked]="checked">
+                  <span class="checkmark"></span>
+                </label> </th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Slug</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label class="check-box">
+                  <input class="ml-2" type="checkbox" name="company" [checked]="checked">
+                  <span class="checkmark"></span>
+                </label></td>
+              <td>Doe</td>
+              <td>John</td>
+              <td>Doe</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td><label class="check-box">
+                  <input class="ml-2" type="checkbox" name="company" [checked]="checked">
+                  <span class="checkmark"></span>
+                </label></td>
+              <td>Doe</td>
+              <td>John</td>
+              <td>Doe</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td><label class="check-box">
+                  <input class="ml-2" type="checkbox" name="company" [checked]="checked">
+                  <span class="checkmark"></span>
+                </label></td>
+              <td>Doe</td>
+              <td>John</td>
+              <td>Doe</td>
+              <td>6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

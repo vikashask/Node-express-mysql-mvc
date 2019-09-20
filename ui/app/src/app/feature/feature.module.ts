@@ -13,13 +13,12 @@ import { CategoryComponent } from './category/category.component';
 import { MenuComponent } from './menu/menu.component';
 import { FileManagerComponent } from './file-manager/file-manager.component';
 import { ProfileComponent } from './profile/profile.component';
-import {MyOwnCustomMaterialModule} from './../shared/material.module';
+
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    ReactiveFormsModule,
-    MyOwnCustomMaterialModule
+    ReactiveFormsModule
   ],
   declarations: [LoginComponent, ContentComponent, UploadComponent, TagComponent, IngredientComponent, CategoryComponent, MenuComponent, FileManagerComponent, ProfileComponent],
   exports: [LoginComponent, ContentComponent, UploadComponent, TagComponent, IngredientComponent, CategoryComponent, MenuComponent, FileManagerComponent, ProfileComponent]
