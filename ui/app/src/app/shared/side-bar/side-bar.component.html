@@ -1,0 +1,11 @@
+<div class="container-fluid p-0">
+  <div *ngFor="let item of items" [ngClass]="item.active ? 'active' : 'inactive'" class="row m-0 p-0 mt-4 mb-4 align-items-center"
+    (click)="selectMenu(item)">
+    <img class="sidebar-img ml-4" [src]="item.imgSrc">
+    <span class="ml-3 d-sm-none d-md-block">{{item.title}}</span>
+  </div>
+  <div class="row m-0 p-0 align-items-center logout" (click)="logout()">
+    <img class="sidebar-img ml-4" [src]="imageDomain + '/logout.png'">
+    <span class="ml-3 d-sm-none d-md-block">Logout</span>
+  </div>
+</div>

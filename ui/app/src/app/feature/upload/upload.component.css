@@ -1,0 +1,98 @@
+.upload-btn {
+    background-color: #eb710e;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.btn-black{
+    background-color: #000;
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.sync-btn {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.img-container{
+    margin: auto;
+    line-height: 300px;
+    width: 100%;
+    border: 3px dashed lightgrey;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.img-container .innerdiv {
+    line-height: 2.5;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .b-10{margin-bottom: 10px;}
+  .input-group-text{background-color: #fff;}
+  .m-left{margin-left:10%;}
+  .mop48{margin-top:48px;}
+
+
+  /* custom file css */
+ .img-container label{
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-weight: 700;
+    padding: 5px 75px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:5px;
+    margin: 4px 2px;
+    cursor: pointer;
+     }
+  .w99{width: 99%;}
+
+.img-container input[type="file"] {
+    display: none;
+}
+ .card-body .check-box{font-size:1.2rem;}
+
+ .card-header{font-weight:700;}
+
+ @media (min-width: 576px){
+.form-inline .form-control {
+    display: inline-block;
+     width: 100%;
+    vertical-align: middle;
+}
+ }
+@media only screen and (max-width: 991px) {
+
+.m-left{margin-left:0%;}
+}
+
+.text-1{
+    width:48%; 
+    margin-bottom: .5rem;
+}
