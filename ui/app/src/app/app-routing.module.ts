@@ -13,14 +13,14 @@ import { UploadComponent } from './feature/upload/upload.component';
 
 import { MainComponent } from './main.component';
 
-import { AuthGuardService } from './provider/auth-gaurd.service';
+// import { AuthGuardService } from './provider/auth-gaurd.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: '',
     component: MainComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
     children: [
       { path: 'category', component: CategoryComponent },
       { path: 'content', component: ContentComponent },

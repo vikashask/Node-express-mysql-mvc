@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { FormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from '../shared/shared.module';
@@ -14,11 +15,14 @@ import { MenuComponent } from './menu/menu.component';
 import { FileManagerComponent } from './file-manager/file-manager.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import {materialModule} from './../shared/material.module';
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    ReactiveFormsModule
+    materialModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [LoginComponent, ContentComponent, UploadComponent, TagComponent, IngredientComponent, CategoryComponent, MenuComponent, FileManagerComponent, ProfileComponent],
   exports: [LoginComponent, ContentComponent, UploadComponent, TagComponent, IngredientComponent, CategoryComponent, MenuComponent, FileManagerComponent, ProfileComponent]
