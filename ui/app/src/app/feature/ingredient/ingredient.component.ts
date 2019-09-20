@@ -13,6 +13,7 @@ export class IngredientComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    console.log("this.ingredientForm.value");
 
     this.ingredientForm = this.formBuilder.group({
       name: ['', [Validators.required]],

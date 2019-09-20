@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  patchProfileValue(data){
+  patchProfileValue(data) {
     this.loginForm.patchValue({
       firstName: data.first_name,
       lastName: data.last_name,
@@ -40,5 +40,7 @@ export class ProfileComponent implements OnInit {
       phoneNumber: data.phone_number
     })
   }
-
+  login() {
+    console.log(this.loginForm.value)
+  }
 }
