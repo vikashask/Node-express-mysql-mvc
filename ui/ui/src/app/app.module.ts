@@ -21,6 +21,9 @@ import { SharedModule } from './shared/shared.module';
 /** Import Services */
 import { TokenInterceptor } from './provider/http-interceptor.service';
 
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,8 @@ import { TokenInterceptor } from './provider/http-interceptor.service';
     NgxSpinnerModule,
     AppRoutingModule,
     FeatureModule,
-    SharedModule
+    SharedModule,
+    MatButtonModule, MatCheckboxModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
