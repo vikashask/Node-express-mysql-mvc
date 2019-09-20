@@ -1,16 +1,17 @@
 label{
-    font-size:22px;
+    font-size:20px;
     font-weight: 700;
 }
 .upload-btn {
     background-color: #eb710e;
     border: none;
     color: white;
-    padding: 5px 15px;
+    padding: 8px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+     border-radius:4px;
     margin: 4px 2px;
     cursor: pointer;
 }

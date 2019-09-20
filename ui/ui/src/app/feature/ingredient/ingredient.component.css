@@ -1,0 +1,17 @@
+
+.upload-btn {
+    background-color: #eb710e;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:4px;
+    margin: 4px 2px;
+    cursor: pointer;
+   
+}
+.table thead th{vertical-align: top;}
+h3{line-height: 1.7;}

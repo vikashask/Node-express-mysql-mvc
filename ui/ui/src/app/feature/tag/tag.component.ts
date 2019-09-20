@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tag',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagComponent implements OnInit {
 
-  constructor() { }
+  tagForm: FormGroup
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.tagForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      slug: ['', Validators.required],
+      description: ['', Validators.required]
+    })
   }
+  addTag() {
+    console.log(this.tagForm.value);
 
+  }
 }

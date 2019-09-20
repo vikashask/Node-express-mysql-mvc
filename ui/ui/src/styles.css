@@ -26,16 +26,19 @@ body, html{
   font-family:  Helvetica, Arial
 }
 .sidebar {
-    /* height: calc(100vh - 60px); */
-    width: 250px;
+     height: calc(100vh - 60px);
+   width:13%;
+position: fixed;
     /* position: fixed; */
     /* top: 60px; */
     /* left: 0px; */
 }
+.ng-star-inserted{width: 100%; margin-left: 13%;}
 .main-panel {
     /* width: calc(100vh - 250px);; */
     /* padding-left: 250px */
     display: flex;
+    margin-top: 40px;
 }
 /* ================================= checkbox css  ================================= */
 .check-box {
@@ -97,13 +100,16 @@ body, html{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-h2.title{font-size:2.5rem; font-family:Helvetica-Bold}
+h2.title{font-size:2rem; font-family:Helvetica-Bold}
 h3{
   font-size: 1.5rem;
 }
 h2, h3{  color:#000; font-weight: 700;}
 textarea{resize:none;}
-
+label{
+    font-size:20px;
+    font-weight: 700;
+}
 /*  ==================== search box icon ====================  */
 .has-search .form-control {
   padding-left: 2.375rem;
@@ -119,12 +125,21 @@ textarea{resize:none;}
   pointer-events: none;
   color: #aaa;
 }
+
+.btn{font-weight: 700;}
+
 @media only screen and (max-width: 767px) {
     .sidebar {
       width: 68px;
     }
 }
 
+@media (min-width: 768px){
+.sidebar-img {
+  width: 30px;
+   
+}
+}
 .disable-input-style {
     background: transparent;
     border: none;
@@ -137,3 +152,19 @@ textarea{resize:none;}
 .disable-input-style:focus {
     outline: none;
 }      
+
+::-webkit-input-placeholder {
+   font-size: 16px;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+      font-size: 16px;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+      font-size: 16px;
+}
+
+:-ms-input-placeholder {
+      font-size: 16px;
+}
