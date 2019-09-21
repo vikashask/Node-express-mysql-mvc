@@ -2,19 +2,20 @@
   <div class="row m-0 p-0 mt-2 justify-content-between align-items-center">
     <h2 class="title">Content Library</h2>
     <div>
-        <button mat-flat-button class="sync-btn m-2"> <mat-icon>sync</mat-icon></button>
-      <button mat-flat-button class="upload-btn m-2"><span class="fa fa-plus mr-3"></span> Upload video</button>
+      <button mat-flat-button class="sync-btn m-2"> <mat-icon>sync</mat-icon></button>
+      <button mat-flat-button class="upload-btn m-2"><span class="fa fa-plus mr-3"></span> Upload videos</button>
     </div>
   </div>
   <!-- ====================Tab Section================ -->
-  <div class='content-tab'>
-    <mat-tab-group animationDuration="0ms">
-      <mat-tab label="All Posts">
+<div class='content-tab'>
+ <mat-tab-group animationDuration="0ms">
+     <!-- tab1 section-->
+ <mat-tab label="All Posts">
 <div class="tab-content mt-3">
   <div id="all-posts" class=" tab-pane active">
     <div class='row m-0 content-post'>
       <div class="form-group">
-        <mat-form-field class="">
+        <mat-form-field>
             <mat-label> <i class="fa fa-bandcamp" aria-hidden="true"></i> Post Status: - All</mat-label>
             <mat-select [(ngModel)]="selectedValue" name="food">
               <mat-option *ngFor="let food of foods" [value]="food.value">
@@ -42,14 +43,11 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-
       </div>
       <mat-form-field class="example-full-width">
           <mat-label> <mat-icon matPrefix >search</mat-icon>Search</mat-label>
-     
         <input matInput >
       </mat-form-field>
-
     </div>
     <table class="table">
       <thead>
@@ -63,8 +61,6 @@
         <tr>
           <td>
             <div class='main-tb-inline'>
-               
-
               <div class='tb-inline'>
                   <mat-checkbox></mat-checkbox>
               </div>
@@ -79,10 +75,9 @@
               </div>
             </div>
           </td>
-          <td>Published</td>
+          <td><span class="dot mr-1"></span>Published</td>
           <td>{{date | date :'dd/MM/yyyy hh:mm a'}}</td>
         </tr>
-
         <tr>
           <td>
             <div class='main-tb-inline'>
@@ -99,19 +94,19 @@
               </div>
             </div>
           </td>
-          <td>Published</td>
+          <td><span class="dot mr-1"></span>Published</td>
           <td>{{date | date :'dd/MM/yyyy hh:mm a'}}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-
-
       </mat-tab>
-
+      <!-- tab2 section-->
       <mat-tab label="All Published">Content 2</mat-tab>
+        <!-- tab3 section-->
       <mat-tab label="Scheduled">Content 3</mat-tab>
+        <!-- tab4 section-->
       <mat-tab label="Drafts">Content 3</mat-tab>
     </mat-tab-group>
     <!-- Tab panes -->
