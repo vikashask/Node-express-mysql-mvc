@@ -34,22 +34,14 @@
     <div class='col-lg-8'>
       <div class="row m-0 p-0 justify-content-between align-items-center">
         <div class='mb-2'>
-            <button mat-button >Bulk Actions</button>
-
-            <mat-menu #animals="matMenu">
-              <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-              <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
-            </mat-menu>
-          <!-- <div class="btn-group border mr-2">
-            <button type="button mat-flat-button" class="btn btn-light">Bulk Actions</button>
-            <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Tablet</a>
-              <a class="dropdown-item" href="#">Smartphone</a>
-            </div>
-          </div> -->
+          <button mat-button [matMenuTriggerFor]="actions">Bulk Actions <i class="material-icons">
+            arrow_drop_down
+            </i></button>
+          <mat-menu #actions="matMenu">
+            <button mat-menu-item >Vertebrates</button>
+            <button mat-menu-item >Invertebrates</button>
+          </mat-menu>
+        
           <button mat-flat-button class="upload-btn m-2">Apply</button>
         </div>
         <span><b>12 Items</b></span>
@@ -58,11 +50,9 @@
       <div class="table-responsive-sm">
         <table class="table table-striped">
           <thead class="thead-dark">
-            <tr>
-              <th><label class="check-box">
-                  <input class="ml-2" type="checkbox" name="company" [checked]="checked">
-                  <span class="checkmark"></span>
-                </label> </th>
+            <tr><th>
+                <mat-checkbox></mat-checkbox>
+              </th>
               <th>Name</th>
               <th>Description</th>
               <th>Slug</th>
@@ -71,30 +61,21 @@
           </thead>
           <tbody>
             <tr>
-              <td><label class="check-box">
-                  <input class="ml-2" type="checkbox" name="company" [checked]="checked">
-                  <span class="checkmark"></span>
-                </label></td>
+              <td><mat-checkbox></mat-checkbox></td>
               <td>Doe</td>
               <td>John</td>
               <td>Doe</td>
               <td>1</td>
             </tr>
             <tr>
-              <td><label class="check-box">
-                  <input class="ml-2" type="checkbox" name="company" [checked]="checked">
-                  <span class="checkmark"></span>
-                </label></td>
+              <td><mat-checkbox></mat-checkbox></td>
               <td>Doe</td>
               <td>John</td>
               <td>Doe</td>
               <td>4</td>
             </tr>
             <tr>
-              <td><label class="check-box">
-                  <input class="ml-2" type="checkbox" name="company" [checked]="checked">
-                  <span class="checkmark"></span>
-                </label></td>
+              <td><mat-checkbox></mat-checkbox></td>
               <td>Doe</td>
               <td>John</td>
               <td>Doe</td>

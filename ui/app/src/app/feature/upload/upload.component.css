@@ -2,7 +2,7 @@
     background-color: #eb710e;
     border: none;
     color: white;
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -14,7 +14,7 @@
     background-color: #000;
     border: none;
     color: white;
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -27,7 +27,7 @@
     background-color: lightgrey;
     border: none;
     color: black;
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;

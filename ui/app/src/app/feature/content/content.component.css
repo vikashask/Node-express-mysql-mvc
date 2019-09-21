@@ -2,7 +2,7 @@
     background-color: #d46f00;
     border: none;
     color: white;
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -15,7 +15,7 @@
     background-color: rgb(230, 225, 225);
     border:  rgb(97, 94, 94);;
     color: black;
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -63,7 +63,7 @@ select.form-control {background-color: #f1f1f1 ;}
 .table th:last-child {
     color:#3d2b6e;
 }
-hr{margin:0px;}
+
 table th:nth-child(3),
 table td:nth-child(3)
 {
@@ -78,4 +78,3 @@ table td:nth-child(3)
     
 }
 .mat-checkbox{margin-top:10px;}
-.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{    background-color: #d46f00 !important;}
