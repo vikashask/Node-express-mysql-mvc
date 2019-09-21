@@ -26,15 +26,22 @@
           <textarea class="form-control" formControlName='description' id="description" placeholder="Heat 1 teaspoon oil in a pan .."
             rows="5"></textarea>
         </div>
-        <button type='button' [disabled]=TagForm?.invalid class="upload-btn" (click)='addTag()'>Add New Tag</button>
+      
+        <button mat-flat-button class="upload-btn m-2" (click)='addTag()'>Add New Tag</button>
       </form>
     </div>
     <!--  =====================================  Right Section ===================================== -->
     <div class='col-lg-8'>
       <div class="row m-0 p-0 justify-content-between align-items-center">
         <div class='mb-2'>
-          <div class="btn-group border mr-2">
-            <button type="button" class="btn btn-light">Bulk Actions</button>
+            <button mat-button >Bulk Actions</button>
+
+            <mat-menu #animals="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+              <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+            </mat-menu>
+          <!-- <div class="btn-group border mr-2">
+            <button type="button mat-flat-button" class="btn btn-light">Bulk Actions</button>
             <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
               <span class="caret"></span>
             </button>
@@ -42,8 +49,8 @@
               <a class="dropdown-item" href="#">Tablet</a>
               <a class="dropdown-item" href="#">Smartphone</a>
             </div>
-          </div>
-          <button class="upload-btn">Apply</button>
+          </div> -->
+          <button mat-flat-button class="upload-btn m-2">Apply</button>
         </div>
         <span><b>12 Items</b></span>
       </div>
