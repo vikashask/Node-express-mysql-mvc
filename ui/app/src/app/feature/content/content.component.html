@@ -2,123 +2,119 @@
   <div class="row m-0 p-0 mt-2 justify-content-between align-items-center">
     <h2 class="title">Content Library</h2>
     <div>
-      <!-- this is example for material button -->
-        <button mat-raised-button class="sync-btn m-2">Primary</button>
-      <button type="button" class="sync-btn m-2">Sync</button>
-      <button class="upload-btn"><span class="fa fa-plus mr-3"></span>Upload Vedio</button>
+        <button mat-flat-button class="sync-btn m-2"> <mat-icon>sync</mat-icon></button>
+      <button mat-flat-button class="upload-btn m-2"><span class="fa fa-plus mr-3"></span> Upload video</button>
     </div>
   </div>
-
   <!-- ====================Tab Section================ -->
   <div class='content-tab'>
-    <ul class="nav">
-      <li class="nav-item active">
-        <a class="nav-link active" data-toggle="tab">All Posts</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab">All Published</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Scheduled</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link">Drafts</a>
-      </li>
-    </ul>
-    <hr />
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div id="all-posts" class=" tab-pane active"><br>
-        <div class='row m-0 content-post'>
-          <div class="form-group">
-            <mat-form-field>
-                <mat-label>Favorite food</mat-label>
-                <mat-select [(ngModel)]="selectedValue" name="food">
-                  <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-          </div>
-          <div class="form-group">
-            <select class="form-control">
-              <option>All time</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <select class="form-control">
-              <option>Filters</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-
-          </div>
-          <div class="form-group has-search">
-            <span class="fa fa-search form-control-feedback"></span>
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-        </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Post</th>
-              <th>Post Status</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class='main-tb-inline'>
-                  <div class='tb-inline'>
-                    <label class="check-box">
-                      <input class="ml-2" type="checkbox" name="company" [checked]="checked">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                  <div class='tb-inline'>
-                    <img src='assets/images/play_icon.png' />
-                  </div>
-                  <div class='tb-inline w180'><img src='assets/images/video-img.png' /></div>
-                  <div class='tb-inline'>
-                    <p><b>Lorem Ipsum Lorem Ipsum</b></p>
-                    <p>Daily Jokes</p>
-                  </div>
-                </div>
-              </td>
-              <td>Published</td>
-              <td>{{date | date :'dd/MM/yyyy hh:mm a'}}</td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class='main-tb-inline'>
-                  <div class='tb-inline'>
-                    <label class="check-box">
-                      <input class="ml-2" type="checkbox" name="company" [checked]="checked">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-                  <div class='tb-inline'>
-                    <img src='assets/images/play_icon.png' />
-                  </div>
-                  <div class='tb-inline w180'><img src='assets/images/video-img.png' /></div>
-                  <div class='tb-inline'>
-                    <p><b>Lorem Ipsum Lorem Ipsum</b></p>
-                    <p>Daily Jokes</p>
-                  </div>
-                </div>
-              </td>
-              <td>Published</td>
-              <td>{{date | date :'dd/MM/yyyy hh:mm a'}}</td>
-            </tr>
-          </tbody>
-        </table>
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="All Posts">
+<div class="tab-content mt-3">
+  <div id="all-posts" class=" tab-pane active">
+    <div class='row m-0 content-post'>
+      <div class="form-group">
+        <mat-form-field class="">
+            <mat-label> <i class="fa fa-bandcamp" aria-hidden="true"></i> Post Status: - All</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="food">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
       </div>
+      <div class="form-group">
+        <mat-form-field>
+          <mat-label> <mat-icon>today</mat-icon> All Time</mat-label>
+          <mat-select [(ngModel)]="selectedValue" name="games">
+            <mat-option *ngFor="let game of games" [value]="game.value">
+              {{game.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <mat-label> <mat-icon>filter_list</mat-icon> Filters</mat-label>
+          <mat-select [(ngModel)]="selectedValue" name="movie">
+            <mat-option *ngFor="let movie of movies" [value]="movie.value">
+              {{movie.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+      <mat-form-field class="example-full-width">
+          <mat-label> <mat-icon matPrefix >search</mat-icon>Search</mat-label>
+     
+        <input matInput >
+      </mat-form-field>
+
     </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Post</th>
+          <th>Post Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class='main-tb-inline'>
+               
+
+              <div class='tb-inline'>
+                  <mat-checkbox></mat-checkbox>
+              </div>
+              <div class='tb-inline'>
+                <img src='assets/images/play_icon.png' />
+              </div>
+              <div class='tb-inline w180'>
+                <img src='assets/images/video-img.png' /></div>
+              <div class='tb-inline'>
+                <p><b>Lorem Ipsum Lorem Ipsum</b></p>
+                <p>Daily Jokes</p>
+              </div>
+            </div>
+          </td>
+          <td>Published</td>
+          <td>{{date | date :'dd/MM/yyyy hh:mm a'}}</td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class='main-tb-inline'>
+              <div class='tb-inline'>
+                  <mat-checkbox class="mt-2"></mat-checkbox>
+              </div>
+              <div class='tb-inline'>
+                <img src='assets/images/play_icon.png' />
+              </div>
+              <div class='tb-inline w180'><img src='assets/images/video-img.png' /></div>
+              <div class='tb-inline'>
+                <p><b>Lorem Ipsum Lorem Ipsum</b></p>
+                <p>Daily Jokes</p>
+              </div>
+            </div>
+          </td>
+          <td>Published</td>
+          <td>{{date | date :'dd/MM/yyyy hh:mm a'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+      </mat-tab>
+
+      <mat-tab label="All Published">Content 2</mat-tab>
+      <mat-tab label="Scheduled">Content 3</mat-tab>
+      <mat-tab label="Drafts">Content 3</mat-tab>
+    </mat-tab-group>
+    <!-- Tab panes -->
+    
   </div>
 </div>

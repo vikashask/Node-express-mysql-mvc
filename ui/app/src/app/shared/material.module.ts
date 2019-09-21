@@ -4,7 +4,9 @@ import {
   MatButtonModule,
   MatInputModule,
   MatCheckboxModule,
-  MatSelectModule
+  MatSelectModule,
+  MatIconModule,
+  MatTabsModule
   
 } from '@angular/material';
 
@@ -13,13 +15,17 @@ import {
     MatButtonModule, 
     MatCheckboxModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule,
+    MatTabsModule
   ],
   exports: [
     MatButtonModule, 
     MatCheckboxModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule,
+    MatTabsModule
   ],
 })
 export class materialModule { }
