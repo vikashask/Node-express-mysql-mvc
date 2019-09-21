@@ -12,8 +12,8 @@
 }
 
 .sync-btn {
-    background-color: lightgrey;
-    border: none;
+    background-color: rgb(230, 225, 225);
+    border:  rgb(97, 94, 94);;
     color: black;
     padding: 5px 15px;
     text-align: center;
@@ -68,3 +68,5 @@ table td:nth-child(3)
 {
     background: #f1f1f1;
 }
+
+.mat-checkbox{margin-top:10px;}

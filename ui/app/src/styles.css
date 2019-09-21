@@ -29,18 +29,18 @@
   }
   .sidebar {
        height: calc(100vh - 60px);
-     width:13%;
+     width:17%;
   position: fixed;
       /* position: fixed; */
       /* top: 60px; */
       /* left: 0px; */
   }
-  .right-body{width: 100%; margin-left: 13%;} 
+  .right-body{width: 100%; margin-left: 17%;} 
   .main-panel {
       /* width: calc(100vh - 250px);; */
       /* padding-left: 250px */
       display: flex;
-      margin-top: 36px;
+      margin-top: 60px;
   }
   /* ================================= checkbox css  ================================= */
   .check-box {
@@ -170,3 +170,4 @@
   :-ms-input-placeholder {
         font-size: 16px;
   }
+  button:focus{outline:none;}
