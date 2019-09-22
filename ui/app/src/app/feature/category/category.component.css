@@ -13,6 +13,19 @@
     display: inline-block;
     vertical-align: middle;
   }
-  .fa-plus{font-size: 40px; color:rgb(51, 133, 201);}
+  .innerdiv .fa-plus{font-size: 40px; color:rgb(51, 133, 201);}
   .bt-0{border-top:0 !important;}
   .border label{font-weight:100; font-size:16px;}
+
+   .upload-btn {
+    background-color: #d46f00;
+    border: none;
+    color: white;
+    /* padding: 5px 15px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
