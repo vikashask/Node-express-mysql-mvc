@@ -19,6 +19,7 @@ export class SideBarComponent implements OnInit {
     { title: 'Menu', path: 'menu', imgSrc: environment.imageDomain + '/menu.png', active: false },
     { title: 'File Manager', path: 'file-manager', imgSrc: environment.imageDomain + '/file-manager.png', active: false },
     { title: 'Profile', path: 'profile', imgSrc: environment.imageDomain + '/profile.png', active: false }
+
   ]
 
   constructor(private router: Router) { }

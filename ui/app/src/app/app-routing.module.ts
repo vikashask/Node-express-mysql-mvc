@@ -22,14 +22,14 @@ const routes: Routes = [
     component: MainComponent,
     // canActivate: [AuthGuardService],
     children: [
-      { path: 'category', component: CategoryComponent },
       { path: 'content', component: ContentComponent },
-      { path: 'file-manager', component: FileManagerComponent },
-      { path: 'ingredient', component: IngredientComponent },
-      { path: 'menu', component: MenuComponent },
-      { path: 'profile', component: ProfileComponent },
-      { path: 'tag', component: TagComponent },
       { path: 'upload', component: UploadComponent },
+      { path: 'tag', component: TagComponent },
+      { path: 'ingredient', component: IngredientComponent },
+      { path: 'category', component: CategoryComponent },
+      { path: 'menu', component: MenuComponent },  
+      { path: 'file-manager', component: FileManagerComponent },  
+      { path: 'profile', component: ProfileComponent },
       { path: '', redirectTo: 'content', pathMatch: 'full' }
     ]
   }
