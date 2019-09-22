@@ -10,15 +10,15 @@ export interface BulkAction {
 
 export interface PeriodicElement {
   name: string;
-  position: number;
+  // position: number;
   description: string;
   slug: string;
 }
 
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', description: 'test', slug: 'H'},
-  {position: 2, name: 'Helium', description: 'test', slug: 'He'},
+  {name: 'Hydrogen', description: 'test', slug: 'H'},
+  // {position: 2, name: 'Helium', description: 'test', slug: 'He'},
 ];
 
 @Component({
@@ -40,7 +40,7 @@ export class TagComponent implements OnInit {
 
 
   // table props
-  displayedColumns: string[] = ['select', 'position', 'name', 'description', 'slug'];
+  displayedColumns: string[] = ['select', 'name', 'description', 'slug'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
   constructor(private formBuilder: FormBuilder) { }
@@ -84,7 +84,7 @@ export class TagComponent implements OnInit {
     if (!row) {
       return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
     }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+    // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
   addTag() {
     console.log(this.name.value);
