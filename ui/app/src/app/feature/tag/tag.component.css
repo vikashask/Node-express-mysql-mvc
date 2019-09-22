@@ -16,3 +16,6 @@ label{
     cursor: pointer;
 }
 .table thead th{vertical-align: top;}
+table {
+    width: 100%;
+  }
