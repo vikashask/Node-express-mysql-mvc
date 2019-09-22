@@ -12,7 +12,7 @@ export class SideBarComponent implements OnInit {
   imageDomain = environment.imageDomain;
   items = [
     { title: 'Content Library', path: 'content', imgSrc: environment.imageDomain + '/content-library.png', active: true },
-    { title: 'Upload Vedio', path: 'upload', imgSrc: environment.imageDomain + '/plus.png', active: false },
+    { title: 'Upload Video', path: 'upload', imgSrc: environment.imageDomain + '/plus.png', active: false },
     { title: 'Tags', path: 'tag', imgSrc: environment.imageDomain + '/tag.png', active: false },
     { title: 'Ingredients', path: 'ingredient', imgSrc: environment.imageDomain + '/ingredients.png', active: false },
     { title: 'Categores', path: 'category', imgSrc: environment.imageDomain + '/category.png', active: false },
