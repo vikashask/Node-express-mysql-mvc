@@ -74,7 +74,7 @@ module.exports.streamVideo = async (req, res) => {
       "-maxrate 1498k",
       "-bufsize 2100k",
       "-hls_time 10",
-      "-hls_segment_filename videos/480p_%03d.ts",
+      "-hls_segment_filename videos/upload/480p_%03d.ts",
       "-hls_playlist_type vod",
       "-f hls",
     ])
@@ -98,7 +98,7 @@ module.exports.streamVideo = async (req, res) => {
       "-maxrate 2996k",
       "-bufsize 4200k",
       "-hls_time 10",
-      "-hls_segment_filename videos/720p_%03d.ts",
+      "-hls_segment_filename videos/upload/720p_%03d.ts",
       "-hls_playlist_type vod",
       "-f hls",
     ])
